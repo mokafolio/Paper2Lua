@@ -1,0 +1,5 @@
+add_executable (Paper2LuaTests Paper2LuaTests.cpp)
+set_target_properties(Paper2LuaTests PROPERTIES COMPILE_FLAGS "-fsanitize=address")
+set_target_properties(Paper2LuaTests PROPERTIES LINK_FLAGS "-fsanitize=address")
+target_link_libraries(Paper2LuaTests ${PAPERLUADEPS})
+add_custom_target(check COMMAND PaperLuaTests)
